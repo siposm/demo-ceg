@@ -1,5 +1,9 @@
 "use strict"
 
+function add() {
+    console.log(document.querySelector("#developer-name").value)
+}
+
 async function getData() {
     let resp = await fetch("https://siposm.hu/developerAPI/getDevelopers")
     let data = await resp.json()
