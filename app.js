@@ -10,22 +10,29 @@ async function getData() {
     let data = await resp.json()
     
     data.forEach(element => {
+        
+        // gyökér elem lekérdezése
         let t = document.querySelector("#target")
+        
+        // név paragrafus elem
         let p = document.createElement("p")
         p.textContent = element.name
         
+        // törlés gomb
         let btnDel = document.createElement("button")
         btnDel.textContent = "Delete"
         btnDel.addEventListener("click", () => {
             console.log("...delete...")
         })
         
+        // szerkesztés gomb
         let btnEdit = document.createElement("button")
         btnEdit.textContent = "Edit"
         btnEdit.addEventListener("click", () => {
             console.log("...edit...")
         })
         
+        // elemek hozzáfűzése a gyökér elemhez
         t.appendChild(p)
         t.appendChild(btnDel)
         t.appendChild(btnEdit)
